@@ -33,7 +33,7 @@ Next, run the `pytest` command in your terminal, replacing `{exercise_test.py}` 
 
 Linux/MacOS
 ```bash
-$ python3 -m pytest -o markers=task locomotive_engineer_test.py
+$ python3 -m pytest -o markers=task {exercise_test.py}
 ==================== 7 passed in 0.08s ====================
 ```
 
@@ -95,7 +95,7 @@ Some community-sourced options can be found on our [Python track tools page][Pyt
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit lists.py` command.
+You can submit your solution using the `exercism submit locomotive_engineer.py` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:
