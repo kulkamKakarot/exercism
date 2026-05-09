@@ -5,7 +5,7 @@
 ## 1. Tracking Poker Rounds
 
 - Lists in Python may be [constructed][constructed] in multiple ways.
-- This function should [return][return] a `list`.
+- This function should [return][return] a `list`
 
 ## 2. Keeping all Rounds in the Same Place
 
