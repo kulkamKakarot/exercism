@@ -9,8 +9,12 @@ def add_item(current_cart, items_to_add):
     :return: dict - the updated user cart dictionary.
     """
 
-    pass
-
+    for item in items_to_add:
+        if item in current_cart:
+            current_cart[item] += 1
+        else:
+            current_cart[item] = 1
+    return current_cart
 
 def read_notes(notes):
     """Create user cart from an iterable notes entry.
@@ -18,8 +22,8 @@ def read_notes(notes):
     :param notes: iterable of items to add to cart.
     :return: dict - a user shopping cart dictionary.
     """
-
-    pass
+    new_dict= {}
+    return new_dict.fromkeys(notes,1)
 
 
 def update_recipes(ideas, recipe_updates):
@@ -29,8 +33,8 @@ def update_recipes(ideas, recipe_updates):
     :param recipe_updates: iterable -  with updates for the ideas section.
     :return: dict - updated "recipe ideas" dict.
     """
-
-    pass
+    ideas.update(recipe_updates)
+    return ideas
 
 
 def sort_entries(cart):
@@ -40,8 +44,7 @@ def sort_entries(cart):
     :return: dict - users shopping cart sorted in alphabetical order.
     """
 
-    pass
-
+    return dict(sorted(cart.items()))
 
 def send_to_store(cart, aisle_mapping):
     """Combine users order to aisle and refrigeration information.
@@ -51,7 +54,8 @@ def send_to_store(cart, aisle_mapping):
     :return: dict - fulfillment dictionary ready to send to store.
     """
 
-    pass
+    return {item: [cart[item]] + aisle_mapping[item]
+            for item in sorted(cart, reverse=True)}
 
 
 def update_store_inventory(fulfillment_cart, store_inventory):
@@ -62,4 +66,9 @@ def update_store_inventory(fulfillment_cart, store_inventory):
     :return: dict - store_inventory updated.
     """
 
-    pass
+    for item in fulfillment_cart:
+        if store_inventory[item][0] != 0:
+            store_inventory[item][0] -=fulfillment_cart[item][0]
+        if store_inventory[item][0] == 0:
+            store_inventory[item][0] = 'Out of Stock'
+    return store_inventory

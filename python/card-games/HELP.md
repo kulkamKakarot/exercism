@@ -33,7 +33,7 @@ Next, run the `pytest` command in your terminal, replacing `{exercise_test.py}` 
 
 Linux/MacOS
 ```bash
-$ python3 -m pytest -o markers=task dicts_test.py
+$ python3 -m pytest -o markers=task dict_methods_test.py
 ==================== 7 passed in 0.08s ====================
 ```
 
